@@ -1,0 +1,22 @@
+package cn.mrx.sell.utils;
+
+import java.util.Random;
+
+/**
+ * Author：Mr.X
+ * Date：2017/9/8 15:53
+ * Description：
+ */
+public class KeyUtil {
+
+    /**
+     * 生成唯一的主键
+     * 格式: 时间+随机数
+     * @return
+     */
+    public static synchronized String genUniqueKey() {
+        Random random = new Random();
+        Integer number = random.nextInt(900000) + 100000;
+        return System.currentTimeMillis() + String.valueOf(number);
+    }
+}
